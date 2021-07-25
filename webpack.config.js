@@ -56,7 +56,10 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        {from: path.resolve(__dirname, "src/favicon.ico"), to: path.resolve(__dirname, "dist")},
+        {
+          from: path.resolve(__dirname, "src/favicon.ico"),
+          to: path.resolve(__dirname, "dist")
+        },
       ],
       options: {
         concurrency: 100,
@@ -73,7 +76,8 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            // options: {                  // it is not necessary for hot reload in webpack 5
+            // it is not necessary for hot reload in webpack 5
+            // options: {
             //   hmr: isDev,
             //   reloadAll: true
             // }
@@ -89,4 +93,4 @@ module.exports = {
       }
     ]
   }
-}
+};
